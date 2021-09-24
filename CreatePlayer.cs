@@ -3,26 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using UnityEditor.SceneManagement;
+
 public class CreatePlayer : MonoBehaviour
 {
     private BasePlayerClass newPlayer;
+    private string playerName = "";
 
     //UI
-    public Text atletismoText;
-    public Text pilotagemText;
-    public Text roubarText;
+    public Text combateText;
+    public Text habilidadesText;
+    public Text suporteText;
     public Text saudeText;
-
-    public Text infiltracaoText;
-    public Text mecanicaText;
-    public Text medicoText;
-    public Text preparoText;
-
-    public Text lutaText;
-    public Text atirarText;
-    public Text terapiaText;
-    public Text sanidadeText;
-    public Text vigilanciaText;
 
     private int pointsToSpend = 20;
     public Text pointsText;
@@ -30,26 +22,37 @@ public class CreatePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        newPlayer = new BasePlayerClass();  
+        newPlayer = new BasePlayerClass();
+        UpdateUI();
+    }
+
+    public void CreateNewPlayer()
+    {
+        newPlayer.PlayerLevel = 1;
+        newPlayer.PlayerName = playerName;
+
+        GameInfo.PlayerLevel = newPlayer.PlayerLevel;
+        GameInfo.PlayerName = newPlayer.PlayerName;
+        GameInfo.PlayerClass = newPlayer.PlayerClass;
+
+        GameInfo.Combate = newPlayer.Combate;
+        GameInfo.Habilidades = newPlayer.Habilidades;
+        GameInfo.Suporte = newPlayer.Suporte;
+        GameInfo.Saude = newPlayer.Saude;
+
+        SaveInfo.SaveAllInfo();
+
+        EditorSceneManager.LoadScene("TestScene");
     }
 
     public void SetUnnamedClass1()
     {
         pointsToSpend = 20;
         newPlayer.PlayerClass = new BaseUnnamedClass1();
-        newPlayer.Atletismo = newPlayer.PlayerClass.Atletismo;
-        newPlayer.Pilotagem = newPlayer.PlayerClass.Pilotagem;
-        newPlayer.Roubar = newPlayer.PlayerClass.Roubar;
-        newPlayer.Saude = newPlayer.PlayerClass.Saude;
-        newPlayer.Infiltracao = newPlayer.PlayerClass.Infiltracao;
-        newPlayer.Mecanica = newPlayer.PlayerClass.Mecanica;
-        newPlayer.Medico = newPlayer.PlayerClass.Medico;
-        newPlayer.Preparo = newPlayer.PlayerClass.Preparo;
-        newPlayer.Luta = newPlayer.PlayerClass.Luta;
-        newPlayer.Atirar = newPlayer.PlayerClass.Atirar;
-        newPlayer.Terapia = newPlayer.PlayerClass.Terapia;
-        newPlayer.Sanidade = newPlayer.PlayerClass.Sanidade;
-        newPlayer.Vigilancia = newPlayer.PlayerClass.Vigilancia;
+        newPlayer.Combate = newPlayer.PlayerClass.Combate;
+        newPlayer.Habilidades = newPlayer.PlayerClass.Habilidades;
+        newPlayer.Suporte = newPlayer.PlayerClass.Suporte;
+        newPlayer.Saude = newPlayer.PlayerClass.Saude;     
 
         UpdateUI();
     }
@@ -58,19 +61,11 @@ public class CreatePlayer : MonoBehaviour
     {
         pointsToSpend = 20;
         newPlayer.PlayerClass = new BaseUnnamedClass2();
-        newPlayer.Atletismo = newPlayer.PlayerClass.Atletismo;
-        newPlayer.Pilotagem = newPlayer.PlayerClass.Pilotagem;
-        newPlayer.Roubar = newPlayer.PlayerClass.Roubar;
+        newPlayer.Combate = newPlayer.PlayerClass.Combate;
+        newPlayer.Habilidades = newPlayer.PlayerClass.Habilidades;
+        newPlayer.Suporte = newPlayer.PlayerClass.Suporte;
         newPlayer.Saude = newPlayer.PlayerClass.Saude;
-        newPlayer.Infiltracao = newPlayer.PlayerClass.Infiltracao;
-        newPlayer.Mecanica = newPlayer.PlayerClass.Mecanica;
-        newPlayer.Medico = newPlayer.PlayerClass.Medico;
-        newPlayer.Preparo = newPlayer.PlayerClass.Preparo;
-        newPlayer.Luta = newPlayer.PlayerClass.Luta;
-        newPlayer.Atirar = newPlayer.PlayerClass.Atirar;
-        newPlayer.Terapia = newPlayer.PlayerClass.Terapia;
-        newPlayer.Sanidade = newPlayer.PlayerClass.Sanidade;
-        newPlayer.Vigilancia = newPlayer.PlayerClass.Vigilancia;
+      
 
         UpdateUI();
     }
@@ -79,21 +74,11 @@ public class CreatePlayer : MonoBehaviour
     {
         pointsToSpend = 20;
         newPlayer.PlayerClass = new BaseUnnamedClass3();
-        newPlayer.Atletismo = newPlayer.PlayerClass.Atletismo;
-        newPlayer.Pilotagem = newPlayer.PlayerClass.Pilotagem;
-        newPlayer.Roubar = newPlayer.PlayerClass.Roubar;
+        newPlayer.Combate = newPlayer.PlayerClass.Combate;
+        newPlayer.Habilidades = newPlayer.PlayerClass.Habilidades;
+        newPlayer.Suporte = newPlayer.PlayerClass.Suporte;
         newPlayer.Saude = newPlayer.PlayerClass.Saude;
 
-        newPlayer.Infiltracao = newPlayer.PlayerClass.Infiltracao;
-        newPlayer.Mecanica = newPlayer.PlayerClass.Mecanica;
-        newPlayer.Medico = newPlayer.PlayerClass.Medico;
-        newPlayer.Preparo = newPlayer.PlayerClass.Preparo;
-        newPlayer.Luta = newPlayer.PlayerClass.Luta;
-
-        newPlayer.Atirar = newPlayer.PlayerClass.Atirar;
-        newPlayer.Terapia = newPlayer.PlayerClass.Terapia;
-        newPlayer.Sanidade = newPlayer.PlayerClass.Sanidade;
-        newPlayer.Vigilancia = newPlayer.PlayerClass.Vigilancia;
         
         UpdateUI();
 
@@ -101,37 +86,27 @@ public class CreatePlayer : MonoBehaviour
 
     void UpdateUI()
     {
-        atletismoText.text = newPlayer.Atletismo.ToString();
-        pilotagemText.text = newPlayer.Pilotagem.ToString();
-        roubarText.text = newPlayer.Roubar.ToString();
+        combateText.text = newPlayer.Combate.ToString();
+        habilidadesText.text = newPlayer.Habilidades.ToString();
+        suporteText.text = newPlayer.Suporte.ToString();
         saudeText.text = newPlayer.Saude.ToString();
-        infiltracaoText.text = newPlayer.Infiltracao.ToString();
 
-        mecanicaText.text = newPlayer.Mecanica.ToString();
-        medicoText.text = newPlayer.Medico.ToString();
-        preparoText.text = newPlayer.Preparo.ToString();
-        lutaText.text = newPlayer.Luta.ToString();
-        atirarText.text = newPlayer.Atirar.ToString();
-
-        terapiaText.text = newPlayer.Terapia.ToString();
-        sanidadeText.text = newPlayer.Sanidade.ToString();
-        vigilanciaText.text = newPlayer.Vigilancia.ToString();
         pointsText.text = pointsToSpend.ToString();
     }
 
-    public void SetAtletismo(int amount)
+    public void SetCombate(int amount)
     {
         if(newPlayer.PlayerClass != null)
         {
             if (amount > 0 && pointsToSpend > 0)
             {
-                newPlayer.Atletismo += amount;
+                newPlayer.Combate += amount;
                 pointsToSpend -= 1;
                 UpdateUI();
             }
-            else if (amount < 0 && newPlayer.Atletismo > newPlayer.PlayerClass.Atletismo)
+            else if (amount < 0 && newPlayer.Combate > newPlayer.PlayerClass.Combate)
             {
-                newPlayer.Atletismo += amount;
+                newPlayer.Combate += amount;
                 pointsToSpend += 1;
                 UpdateUI();
             }
@@ -141,19 +116,19 @@ public class CreatePlayer : MonoBehaviour
             Debug.Log("Nenhuma classe escolhida");
         }
     }
-    public void SetPilotagem(int amount)
+    public void SetHabilidades(int amount)
     {
         if (newPlayer.PlayerClass != null)
         {
             if (amount > 0 && pointsToSpend > 0)
             {
-                newPlayer.Pilotagem += amount;
+                newPlayer.Habilidades += amount;
                 pointsToSpend -= 1;
                 UpdateUI();
             }
-            else if (amount < 0 && newPlayer.Pilotagem > newPlayer.PlayerClass.Pilotagem)
+            else if (amount < 0 && newPlayer.Habilidades > newPlayer.PlayerClass.Habilidades)
             {
-                newPlayer.Pilotagem += amount;
+                newPlayer.Habilidades += amount;
                 pointsToSpend += 1;
                 UpdateUI();
             }
@@ -163,19 +138,19 @@ public class CreatePlayer : MonoBehaviour
             Debug.Log("Nenhuma classe escolhida");
         }
     }
-    public void SetRoubar(int amount)
+    public void SetSuporte(int amount)
     {
         if (newPlayer.PlayerClass != null)
         {
             if (amount > 0 && pointsToSpend > 0)
             {
-                newPlayer.Roubar += amount;
+                newPlayer.Suporte += amount;
                 pointsToSpend -= 1;
                 UpdateUI();
             }
-            else if (amount < 0 && newPlayer.Roubar > newPlayer.PlayerClass.Roubar)
+            else if (amount < 0 && newPlayer.Suporte > newPlayer.PlayerClass.Suporte)
             {
-                newPlayer.Roubar += amount;
+                newPlayer.Suporte += amount;
                 pointsToSpend += 1;
                 UpdateUI();
             }
@@ -207,203 +182,11 @@ public class CreatePlayer : MonoBehaviour
             Debug.Log("Nenhuma classe escolhida");
         }
     }
-    public void SetInfiltracao(int amount)
+   
+    public void LoadStuff()
     {
-        if (newPlayer.PlayerClass != null)
-        {
-            if (amount > 0 && pointsToSpend > 0)
-            {
-                newPlayer.Infiltracao += amount;
-                pointsToSpend -= 1;
-                UpdateUI();
-            }
-            else if (amount < 0 && newPlayer.Infiltracao > newPlayer.PlayerClass.Infiltracao)
-            {
-                newPlayer.Infiltracao += amount;
-                pointsToSpend += 1;
-                UpdateUI();
-            }
-        }
-        else
-        {
-            Debug.Log("Nenhuma classe escolhida");
-        }
+        LoadInfo.LoadAllInfo();
+        EditorSceneManager.LoadScene("TestScene");
+            
     }
-    public void SetMecanica(int amount)
-    {
-        if (newPlayer.PlayerClass != null)
-        {
-            if (amount > 0 && pointsToSpend > 0)
-            {
-                newPlayer.Mecanica += amount;
-                pointsToSpend -= 1;
-                UpdateUI();
-            }
-            else if (amount < 0 && newPlayer.Mecanica > newPlayer.PlayerClass.Mecanica)
-            {
-                newPlayer.Mecanica += amount;
-                pointsToSpend += 1;
-                UpdateUI();
-            }
-        }
-        else
-        {
-            Debug.Log("Nenhuma classe escolhida");
-        }
-    }
-    public void SetMedico(int amount)
-    {
-        if (newPlayer.PlayerClass != null)
-        {
-            if (amount > 0 && pointsToSpend > 0)
-            {
-                newPlayer.Preparo += amount;
-                pointsToSpend -= 1;
-                UpdateUI();
-            }
-            else if (amount < 0 && newPlayer.Preparo > newPlayer.PlayerClass.Preparo)
-            {
-                newPlayer.Preparo += amount;
-                pointsToSpend += 1;
-                UpdateUI();
-            }
-        }
-        else
-        {
-            Debug.Log("Nenhuma classe escolhida");
-        }
-    }
-    public void SetLuta(int amount)
-    {
-        if (newPlayer.PlayerClass != null)
-        {
-            if (amount > 0 && pointsToSpend > 0)
-            {
-                newPlayer.Luta += amount;
-                pointsToSpend -= 1;
-                UpdateUI();
-            }
-            else if (amount < 0 && newPlayer.Luta > newPlayer.PlayerClass.Luta)
-            {
-                newPlayer.Luta += amount;
-                pointsToSpend += 1;
-                UpdateUI();
-            }
-        }
-        else
-        {
-            Debug.Log("Nenhuma classe escolhida");
-        }
-    }
-    public void SetAtirar(int amount)
-    {
-        if (newPlayer.PlayerClass != null)
-        {
-            if (amount > 0 && pointsToSpend > 0)
-            {
-                newPlayer.Atirar += amount;
-                pointsToSpend -= 1;
-                UpdateUI();
-            }
-            else if (amount < 0 && newPlayer.Atirar > newPlayer.PlayerClass.Atirar)
-            {
-                newPlayer.Atirar += amount;
-                pointsToSpend += 1;
-                UpdateUI();
-            }
-        }
-        else
-        {
-            Debug.Log("Nenhuma classe escolhida");
-        }
-    }
-    public void SetTerapia(int amount)
-    {
-        if (newPlayer.PlayerClass != null)
-        {
-            if (amount > 0 && pointsToSpend > 0)
-            {
-                newPlayer.Terapia += amount;
-                pointsToSpend -= 1;
-                UpdateUI();
-            }
-            else if (amount < 0 && newPlayer.Terapia > newPlayer.PlayerClass.Terapia)
-            {
-                newPlayer.Terapia += amount;
-                pointsToSpend += 1;
-                UpdateUI();
-            }
-        }
-        else
-        {
-            Debug.Log("Nenhuma classe escolhida");
-        }
-    }
-    public void SetSanidade(int amount)
-    {
-        if (newPlayer.PlayerClass != null)
-        {
-            if (amount > 0 && pointsToSpend > 0)
-            {
-                newPlayer.Sanidade += amount;
-                pointsToSpend -= 1;
-                UpdateUI();
-            }
-            else if (amount < 0 && newPlayer.Sanidade > newPlayer.PlayerClass.Sanidade)
-            {
-                newPlayer.Sanidade += amount;
-                pointsToSpend += 1;
-                UpdateUI();
-            }
-        }
-        else
-        {
-            Debug.Log("Nenhuma classe escolhida");
-        }
-    }
-    public void SetVigilancia(int amount)
-    {
-        if (newPlayer.PlayerClass != null)
-        {
-            if (amount > 0 && pointsToSpend > 0)
-            {
-                newPlayer.Vigilancia += amount;
-                pointsToSpend -= 1;
-                UpdateUI();
-            }
-            else if (amount < 0 && newPlayer.Vigilancia > newPlayer.PlayerClass.Vigilancia)
-            {
-                newPlayer.Vigilancia += amount;
-                pointsToSpend += 1;
-                UpdateUI();
-            }
-        }
-        else
-        {
-            Debug.Log("Nenhuma classe escolhida");
-        }
-    }
-    public void SetPreparo(int amount)
-    {
-        if (newPlayer.PlayerClass != null)
-        {
-            if (amount > 0 && pointsToSpend > 0)
-            {
-                newPlayer.Preparo += amount;
-                pointsToSpend -= 1;
-                UpdateUI();
-            }
-            else if (amount < 0 && newPlayer.Preparo > newPlayer.PlayerClass.Preparo)
-            {
-                newPlayer.Preparo += amount;
-                pointsToSpend += 1;
-                UpdateUI();
-            }
-        }
-        else
-        {
-            Debug.Log("Nenhuma classe escolhida");
-        }
-    }
-
 }

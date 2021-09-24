@@ -8,26 +8,15 @@ public class BasePlayerClass
     private int playerLevel;
     private BaseClass playerClass;
 
-    private int atletismo;
-    private int pilotagem;
-    private int roubar;
+    private int combate;
+    private int habilidades;
+    private int suporte;
     private int saude;
-
-    private int infiltracao;
-    private int mecanica;
-    private int medico;
-    private int preparo;
-    private int luta;
-
-    private int atirar;
-    private int terapia;
-    private int sanidade;
-    private int vigilancia;
 
     public string PlayerName
     {
         get { return playerName; }
-        set { playerName = value}
+        set { playerName = value; }
     }
 
     public int PlayerLevel
@@ -41,69 +30,27 @@ public class BasePlayerClass
         get { return playerClass; }
         set { playerClass = value; }
     }
-    public int Atletismo
+    public int Combate
     {
-        get { return atletismo; }
-        set { atletismo = value; }
+        get { return combate; }
+        set { combate = value; }
     }
-    public int Pilotagem
+    public int Habilidades
     {
-        get { return pilotagem; }
-        set { pilotagem = value; }
+        get { return habilidades; }
+        set { habilidades = value; }
     }
-    public int Roubar
+
+    public int Suporte
     {
-        get { return roubar; }
-        set { roubar = value; }
+        get { return suporte; }
+        set { suporte = value; }
     }
+
     public int Saude
     {
         get { return saude; }
         set { saude = value; }
     }
-    public int Infiltracao
-    {
-        get { return infiltracao; }
-        set { infiltracao = value; }
-    }
-    public int Mecanica
-    {
-        get { return mecanica; }
-        set { mecanica = value; }
-    }
-    public int Medico
-    {
-        get { return medico; }
-        set { medico = value; }
-    }
-    public int Preparo
-    {
-        get { return preparo; }
-        set { preparo = value; }
-    }
-    public int Luta
-    {
-        get { return luta; }
-        set { luta = value; }
-    }
-    public int Atirar
-    {
-        get { return atirar; }
-        set { atirar = value; }
-    }
-    public int Terapia
-    {
-        get { return terapia; }
-        set { terapia = value; }
-    }
-    public int Sanidade
-    {
-        get { return sanidade; }
-        set { sanidade = value; }
-    }
-    public int Vigilancia
-    {
-        get { return vigilancia; }
-        set { vigilancia = value; }
-    }
 }
+ 
