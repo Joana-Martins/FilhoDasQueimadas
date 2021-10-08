@@ -1,12 +1,12 @@
 Os filhos das queimadas
 ======
 
- [![Built with Unity](https://unity.com/pt)
+ [![Built with Unity](https://unity.com/pt)]
 
 Os Filhos das queimadas é o um jogo rpg interativo, na qual o jogador pode explorar cenários, desvendar mistérios e adentrar na história sobre bruxas e monstros.  
 
 <img
-  src=""
+  src="https://github.com/Joana-Martins/FilhoDasQueimadas/blob/main/imagens/captura.PNG"
   title="janela do jogo"
   width="500">
 
