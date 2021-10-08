@@ -13,7 +13,7 @@ Os Filhos das queimadas é o um jogo rpg interativo, na qual o jogador pode expl
 ## Como jogar
 * Baixe o repositório em um .zip na opção Code->Download ZIP
 * Descompate em uma pasta em seu computador
-* Para iniciar o jogo, dê um duplo clique no arquivo "Projeto Integrado.exe"
+* Para iniciar o jogo vá a pasta " Os filhos das Queimadas" e dê um duplo clique no arquivo "Projeto Integrado.exe"
 * Divirta-se!
 
 ## About Os Filhos das Queimadas
@@ -26,7 +26,7 @@ Usamos o seguinte software de desenvolvimento:
 * [Unity](https://unity.com/pt): Tudo o que você precisa para fazer jogos, contruções, cinemáticas e muito mais. 
 
 Assim como as artes foram feitas usando:
-* Pixilart [Link](https://www.pixilart.com)
+* Pixilart([Link](https://www.pixilart.com))
 
 ### Suporte 
 
