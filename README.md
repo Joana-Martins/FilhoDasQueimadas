@@ -11,6 +11,10 @@ Os Filhos das queimadas é o um jogo rpg interativo, na qual o jogador pode expl
   width="500">
 
 ## Como jogar
+* Baixe o repositório em um .zip na opção Code->Download ZIP
+* Descompate em uma pasta em seu computador
+* Para iniciar o jogo, dê um duplo clique no arquivo "Projeto Integrado.exe"
+* Divirta-se!
 
 ## About Os Filhos das Queimadas
 
