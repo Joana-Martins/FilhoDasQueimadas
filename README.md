@@ -12,7 +12,7 @@ Os Filhos das queimadas é o um jogo rpg interativo, na qual o jogador pode expl
 
 ## Como jogar
 
-## About Piskel
+## About Os Filhos das Queimadas
 
 ### Built with
 
@@ -32,7 +32,7 @@ Os filhos das queimadas roda nos seguintes sistemas operacionais:
 ### Mobile/Tablets
 *Em breve*
 
-## Contributing ?
+## Contribuições
 
 Ajuda é bem-vinda! Porém, entre em contato com os desenvolvedores antes de realizar qualquer requirimento. 
 
